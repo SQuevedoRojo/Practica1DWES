@@ -31,11 +31,11 @@
         return $numdados;
     }
 
-    function sumaDadosJugadores($dados,$jugadores)
+    function sumaDadosJugadores($dados,&$jugadores)
     {
         $puntuacionesJugadores = array();
         
-        foreach ($jugadores as $jugador => $valor) 
+        foreach ($jugadores as $jugador => &$valor) 
         {
             for ($i=0; $i < $dados; $i++) 
             { 
@@ -50,9 +50,9 @@
         saberGanador($puntuacionesJugadores);
     }
 
-    function comprobarSiLosDadosSonIguales($jugadores,$todosIguales)
+    function comprobarSiLosDadosSonIguales(&$jugadores,$puntuacionesJugadores)
     {
-        foreach ($jugadores as $jugador => $valor) 
+		foreach ($jugadores as $jugador => &$valor) 
         {
             $todosIguales = true;
             $valor1 = $valor[0];
@@ -70,16 +70,17 @@
         return $puntuacionesJugadores;
     }
 
-    function imprimirTabla($jugadores)
+    function imprimirTabla(&$jugadores)
     {
-        print "<h2><strong>RESULTADO JUEGO DADOS</strong><h2>";
+        print "<br><br>";
+		print "<h2><strong>RESULTADO JUEGO DADOS</strong><h2>";
         print "<table border='1'>";
-        foreach($jugadores as $jugador => $valores)
+        foreach($jugadores as $jugador => &$valores)
         {
             print "<tr><th>". strtoupper($jugador) ."</th>";
             foreach($valores as $valor)
             {
-                print "<th><img src=\"images/".($valor.".PNG") ."/></th>";
+                print "<th><img src='images/".($valor.".PNG'") ." width='45px' heigth='45px'/></th>";
             }
             print "</tr>";
         }
@@ -89,25 +90,25 @@
     function imprimirPuntuacionesJugadores($puntuacionesJugadores)
     {
         print "<br>";
-        foreach ($puntuacionesJugadores as $jugador => $valor) {
+        foreach ($puntuacionesJugadores as $jugador => &$valor) {
             print "<h4><strong>". $jugador ."</strong> | Puntuacion -> ". $valor ."</h4>";
         }
     }
 
-    function saberGanador($puntuacionesJugadores)
+    function saberGanador(&$puntuacionesJugadores)
     {
         $ganadores = array();
         $valorMaximo = max($puntuacionesJugadores);
         foreach ($puntuacionesJugadores as $jugador => $valor) {
             if($valor == $valorMaximo)
-                $gandores[$jugador] = $valor;     
+                $ganadores[$jugador] = $valor;     
         }
         imprimirGanador($ganadores);
         imprimirNumeroGanadores($ganadores);
     }
     
 
-    function imprimirGanador($ganadores)
+    function imprimirGanador(&$ganadores)
     {
         print "<br>";
         foreach ($ganadores as $jugador => $valor) {
@@ -115,7 +116,7 @@
         }
     }
 
-    function imprimirNumeroGanadores($ganadores)
+    function imprimirNumeroGanadores(&$ganadores)
     {
         print "<br>";
         print "<h4><strong>Numero Ganadores -> </strong>" . count($ganadores) . "</h4>";
