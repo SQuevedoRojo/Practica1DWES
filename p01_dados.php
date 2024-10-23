@@ -11,7 +11,7 @@
 </HEAD>
   <?php 
     include 'funciones_p01_dados.php';
-    include 'funciones_error.php';
+    include 'funcion_error.php';
   ?>
 <BODY>
 
