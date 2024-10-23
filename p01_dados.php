@@ -37,11 +37,7 @@
 <B>Pulsa para Tirar Dados: 
 
 <div>
-
 	<input type="submit" value="Tirar Dados" name="tirar" class="btn btn-warning disabled">
-		
-			
-		
 </div>	
 
 

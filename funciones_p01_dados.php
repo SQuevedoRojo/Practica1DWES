@@ -24,8 +24,7 @@
     function compNumDados(){
         $numdados=0;
         if ($_REQUEST["numdados"]<1 || $_REQUEST["numdados"]>10) {
-            trigger_error($_REQUEST["numdados"] > 10 ? "Numero superior a 10" : "Numero inferior a 1", E_USER_WARNING);
-            $numdados=$_REQUEST["numdados"]>10?10:1;
+            trigger_error($_REQUEST["numdados"] > 10 ? "Numero superior a 10" : "Numero inferior a 1", E_USER_ERROR);
         }else
             $numdados=$_REQUEST["numdados"];
         return $numdados;
