@@ -15,7 +15,7 @@
                 $jugadores[$_REQUEST[$nom]] = array();
             $cont++;
         }
-        if($jugadores<2)
+        if(count($jugadores)<2)
             trigger_error("Numero de jugadores invalido", E_USER_ERROR);
         else
             return $jugadores;
