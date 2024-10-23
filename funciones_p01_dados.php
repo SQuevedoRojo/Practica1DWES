@@ -43,7 +43,7 @@
         {
             for ($i=0; $i < $dados; $i++) 
             { 
-                $valor[] = rand(1,6);
+                $valor[$i] = rand(1,6);
             }
             $puntuacionesJugadores[$jugador] = array_sum($valor);
         }
