@@ -12,7 +12,7 @@
 
 <BODY>
 
-<form name='juegodados' action='' method=''>
+<form name='juegodados' action='funciones_p01_dados.php' method='post'>
 
 <div class="container ">
         <!--Aplicacion-->
