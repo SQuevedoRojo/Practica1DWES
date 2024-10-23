@@ -1,9 +1,5 @@
 <?php
 
-    include 'funcion_error.php';
-
-    inicio();
-
     function inicio(){
         $jugadores = compJugadores();
         $numdados = compNumDados();

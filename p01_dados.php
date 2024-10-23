@@ -9,10 +9,13 @@
   </head>
 
 </HEAD>
-
+  <?php 
+    include 'funciones_p01_dados.php';
+    include 'funciones_error.php';
+  ?>
 <BODY>
 
-<form name='juegodados' action='funciones_p01_dados.php' method='post'>
+<form name='juegodados' action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method='post'>
 
 <div class="container ">
         <!--Aplicacion-->
@@ -42,7 +45,10 @@
 </div>	
 
 
-
+<?php
+  if(($_SERVER["REQUEST_METHOD"] == "POST"))
+    inicio();
+?>
 
 
 
