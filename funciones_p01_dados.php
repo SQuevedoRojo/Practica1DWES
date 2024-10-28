@@ -6,6 +6,9 @@
         sumaDadosJugadores($numdados,$jugadores);
     }
 
+    /*
+    Funcion que comprueba el numero de jugadores existentes, si hay menos de dos jugadores se termina el programa por una excepcion
+    */
     function compJugadores(){
         $jugadores = array();
         $cont = 1;
@@ -21,6 +24,9 @@
             return $jugadores;
     }
 
+    /*
+    Funcion que comprueba el numero de dados, si es menor a 1 o mayor a 10 se termina el programa por una excepcion
+    */
     function compNumDados(){
         $numdados=0;
         if ($_REQUEST["numdados"]<1 || $_REQUEST["numdados"]>10) {
@@ -30,6 +36,11 @@
         return $numdados;
     }
 
+    /*
+    Funcion que genera los dados de los jugadores segun los dados introducidos por el usuario.
+    Recibe el numero de dados y la estructura de los jugadores existentes
+    Deuelve un array con la estructura de los jugadores con la puntuacion total y el array de los jugadores con los dados generados
+    */
     function sumaDadosJugadores($dados,&$jugadores)
     {
         $puntuacionesJugadores = array();
@@ -49,6 +60,12 @@
         saberGanador($puntuacionesJugadores);
     }
 
+
+    /*
+    Funcion que comprueba si los dados en los jugadores son iguales, cuando los dados sean mas de dos
+    Recibe la estructura de los jugadores y la puntuacion de los jugadores para cambiar el valor a 100 si los dados son iguales
+    Devuelve el array de puntuacion de los jugadores
+    */
     function comprobarSiLosDadosSonIguales(&$jugadores,$puntuacionesJugadores)
     {
 		foreach ($jugadores as $jugador => &$valor) 
@@ -70,6 +87,10 @@
         return $puntuacionesJugadores;
     }
 
+    /*
+    Funcion que imprime la tabla de los dados de cada jugador.
+    Recibe el array de jugadores que contiene los dados de cada uno
+    */
     function imprimirTabla(&$jugadores)
     {
         print "<br><br>";
@@ -87,6 +108,10 @@
         print "</table>";
     }
 
+
+    /*
+    Funcion que recibe el array de puntuacionesJugadores e imprime la puntuacion de cada jugador
+    */
     function imprimirPuntuacionesJugadores($puntuacionesJugadores)
     {
         print "<br>";
@@ -95,6 +120,11 @@
         }
     }
 
+
+    /*
+    Funcion que recibe la puntuacion de los jugadores y calcula los ganadores
+    Devuelve un array que contiene los ganadores de la partida
+    */
     function saberGanador(&$puntuacionesJugadores)
     {
         $ganadores = array();
@@ -107,7 +137,9 @@
         imprimirNumeroGanadores($ganadores);
     }
     
-
+    /*
+    Funcion que recibe el array de ganadores e imprime los nombres de los jugadores
+    */
     function imprimirGanador(&$ganadores)
     {
         print "<br>";
@@ -116,6 +148,9 @@
         }
     }
 
+    /*
+    Funcion que recibe el array de ganadores e imprime la puntuacion de los ganadores
+    */
     function imprimirNumeroGanadores(&$ganadores)
     {
         print "<br>";
