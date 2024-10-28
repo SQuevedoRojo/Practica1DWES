@@ -1,11 +1,5 @@
 <?php
 
-    function inicio(){
-        $jugadores = compJugadores();
-        $numdados = compNumDados();
-        sumaDadosJugadores($numdados,$jugadores);
-    }
-
     function compJugadores(){
         $jugadores = array();
         $cont = 1;
@@ -44,9 +38,7 @@
         }
         if ($dados > 2)
             $puntuacionesJugadores = comprobarSiLosDadosSonIguales($jugadores,$puntuacionesJugadores);
-        imprimirTabla($jugadores);
-        imprimirPuntuacionesJugadores($puntuacionesJugadores);
-        saberGanador($puntuacionesJugadores);
+        return $puntuacionesJugadores;
     }
 
     function comprobarSiLosDadosSonIguales(&$jugadores,$puntuacionesJugadores)
@@ -103,8 +95,7 @@
             if($valor == $valorMaximo)
                 $ganadores[$jugador] = $valor;     
         }
-        imprimirGanador($ganadores);
-        imprimirNumeroGanadores($ganadores);
+        return $ganadores;
     }
     
 

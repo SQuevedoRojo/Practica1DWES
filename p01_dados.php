@@ -42,8 +42,19 @@
 
 
 <?php
-  if(($_SERVER["REQUEST_METHOD"] == "POST"))
-    inicio();
+/*
+ * Inicio del programa
+ */
+  if(($_SERVER["REQUEST_METHOD"] == "POST")){
+      $jugadores = compJugadores();
+      $numdados = compNumDados();
+      $puntuacionesJugadores = sumaDadosJugadores($numdados,$jugadores);
+      imprimirTabla($jugadores);
+      imprimirPuntuacionesJugadores($puntuacionesJugadores);
+      $ganadores = saberGanador($puntuacionesJugadores);
+      imprimirGanador($ganadores);
+      imprimirNumeroGanadores($ganadores);
+  }
 ?>
 
 
