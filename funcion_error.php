@@ -1,13 +1,9 @@
 <?php
     function customError($errno, $errstr)
     {
-        echo "<script type='text/javascript'>";
-        echo "window.alert('Error : [$errno] $errstr  <br> Terminando programa...')";
-        echo "</script>";
+        echo "Error : [$errno] $errstr Terminando programa...";
         die();
     }
-
-   
 
     set_error_handler("customError",E_USER_ERROR);
 ?>
