@@ -42,7 +42,7 @@
             }
             $puntuacionesJugadores[$jugador] = array_sum($valor);
         }
-        if ($dados > 1)
+        if ($dados > 2)
             $puntuacionesJugadores = comprobarSiLosDadosSonIguales($jugadores,$puntuacionesJugadores);
         imprimirTabla($jugadores);
         imprimirPuntuacionesJugadores($puntuacionesJugadores);
@@ -62,6 +62,7 @@
                     $todosIguales = true;
                 else
                     $todosIguales = false;
+                $indice += 1;
             }
             if($todosIguales)
                 $puntuacionesJugadores[$jugador] = 100;
