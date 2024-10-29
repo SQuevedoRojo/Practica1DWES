@@ -1,6 +1,7 @@
 <?php
 /*
-    Funcion que comprueba el numero de jugadores existentes, si hay menos de dos jugadores se termina el programa por una excepcion
+    Funcion que crea los jugadores a partir de un txt de la pagina de registro de los jugadores,
+    si hay menos de un jugador se termina el programa por una excepcion
     */
     function compJugadores(){
         $jugadores = array();
@@ -147,6 +148,9 @@
         print "<h4><strong>Numero Ganadores -> </strong>" . count($ganadores) . "</h4>";
     }
 
+    /*
+    Funcion que recoge los datos de los jugadores desde la pagina de registro y crea la linea de insercion para el fichero
+    */
     function recogerjugador()
     {
         $nombre = limpiarDatos($_REQUEST['nombre']);
@@ -155,11 +159,17 @@
         return $nombre . "#" . $apellido . "#" . $email . "\n";
     }
 
+    /*
+    Funcion que recibe un parametro y devuelve el mismo quitando los espacios sobrantes a derecha e izquierda
+    */
     function limpiarDatos($data){
         $data = trim($data);
         return $data;
     }
 
+    /*
+    Funcion que recibe la cadena de insercion y la inserta en el fichero .txt
+    */
     function annadirJugador($cadena)
     {
         $file = fopen("jugadores.txt","a");

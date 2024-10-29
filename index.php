@@ -23,29 +23,28 @@
 		<div class="card-header"><B>JUEGO DADOS</B> </div>
 		<div class="card-body">
 
-<B>Numero Dados: <input type='text' name='numdados' value='' size=5><br><br>
 
 
-<B>Pulsa para Tirar Dados: 
+ 
+<B>Nombre : </B><input type='text' name='nombre' value='' size=25><br><br> 
+<B>Apellidos : </B><input type='text' name='apellido' value='' size=25><br><br> 
+<B>Email : </B><input type='text' name='email' value='' size=25><br><br> 
 
-<div>
-	<input type="submit" value="Tirar Dados" name="tirar" class="btn btn-warning disabled">
-</div>	
+<B>Pulsa para Registrar al Jugador: </B>
+  <div>
+    <input type="submit" value="Registrar Usuario" name="registrar" class="btn btn-warning disabled">
+  </div>	
+
 
 
 <?php
-  /*
-  * Inicio del programa
-  */
-  if(($_SERVER["REQUEST_METHOD"] == "POST")){
-      $numdados = compNumDados();
-      $jugadores = compJugadores();
-      $puntuacionesJugadores = sumaDadosJugadores($numdados,$jugadores);
-      imprimirTabla($jugadores);
-      imprimirPuntuacionesJugadores($puntuacionesJugadores);
-      $ganadores = saberGanador($puntuacionesJugadores);
-      imprimirGanador($ganadores);
-      imprimirNumeroGanadores($ganadores);
+/*
+ * Registros de los jugadores
+ */
+  if((($_SERVER["REQUEST_METHOD"] == "POST")))
+  {
+    $jugador = recogerjugador();
+    annadirjugador($jugador);
   }
 ?>
 
