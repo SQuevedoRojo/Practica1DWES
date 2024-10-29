@@ -4,14 +4,15 @@
     */
     function compJugadores(){
         $jugadores = array();
+        $jugadoresFichero = file("jugadores.txt");
         $cont = 1;
-        while ($cont < 5) {
+        while ($cont < count($jugadoresFichero)) {
             $nom = "jug" . $cont;
             if ($_REQUEST[$nom] != '')
                 $jugadores[$_REQUEST[$nom]] = array();
             $cont++;
         }
-        if(count($jugadores)<2)
+        if(count($jugadores)<1)
             trigger_error("Numero de jugadores invalido", E_USER_ERROR);
         else
             return $jugadores;
@@ -145,5 +146,25 @@
     {
         print "<br>";
         print "<h4><strong>Numero Ganadores -> </strong>" . count($ganadores) . "</h4>";
+    }
+
+    function recogerjugador()
+    {
+        $nombre = limpiarDatos($_REQUEST['nombre']);
+        $apellido= limpiarDatos($_REQUEST['apellido']);
+        $email= limpiarDatos($_REQUEST['email']);
+        return $nombre . "#" . $apellido . "#" . $email;
+    }
+
+    function limpiarDatos($data){
+        $data = trim($data);
+        return $data;
+    }
+
+    function annadirJugador($cadena)
+    {
+        $file = fopen("jugadores.txt","a");
+        fwrite($file,$cadena);
+        fclose($file);
     }
 ?>

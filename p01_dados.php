@@ -26,13 +26,16 @@
 
 
  
-<B>Jugador 1: </B><input type='text' name='jug1' value='' size=25><br><br> 
-<B>Jugador 2: </B><input type='text' name='jug2' value='' size=25><br><br> 
-<B>Jugador 3: </B><input type='text' name='jug3' value='' size=25><br><br> 
-<B>Jugador 4: </B><input type='text' name='jug4' value='' size=25><br><br><br> 
+<B>Nombre : </B><input type='text' name='nombre' value='' size=25><br><br> 
+<B>Apellidos : </B><input type='text' name='apellidos' value='' size=25><br><br> 
+<B>Email : </B><input type='text' name='email' value='' size=25><br><br> 
  
 <B>Numero Dados: <input type='text' name='numdados' value='' size=5><br><br>
 
+<B>Pulsa para Registrar al Jugador: </B>
+  <div>
+    <input type="submit" value="Registrar Usuario" name="registrar" class="btn btn-warning disabled">
+  </div>	
 
 <B>Pulsa para Tirar Dados: 
 
@@ -45,15 +48,21 @@
 /*
  * Inicio del programa
  */
-  if(($_SERVER["REQUEST_METHOD"] == "POST")){
+  if(($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST['tirar'])){
+    var_dump(file("jugador.txt"));  
+    /*$numdados = compNumDados();
       $jugadores = compJugadores();
-      $numdados = compNumDados();
       $puntuacionesJugadores = sumaDadosJugadores($numdados,$jugadores);
       imprimirTabla($jugadores);
       imprimirPuntuacionesJugadores($puntuacionesJugadores);
       $ganadores = saberGanador($puntuacionesJugadores);
       imprimirGanador($ganadores);
-      imprimirNumeroGanadores($ganadores);
+      imprimirNumeroGanadores($ganadores);*/
+  }
+  else if((($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST['registrar'])))
+  {
+    $jugador = recogerjugador();
+    annadirjugador($jugador);
   }
 ?>
 
