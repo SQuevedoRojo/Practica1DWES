@@ -5,11 +5,10 @@
     function compJugadores(){
         $jugadores = array();
         $jugadoresFichero = file("jugadores.txt");
-        $cont = 1;
+        $cont = 0;
         while ($cont < count($jugadoresFichero)) {
-            $nom = "jug" . $cont;
-            if ($_REQUEST[$nom] != '')
-                $jugadores[$_REQUEST[$nom]] = array();
+            $nom = explode($jugadoresFichero[$cont],'#');
+            $jugadores[$nom[0]] = array();
             $cont++;
         }
         if(count($jugadores)<1)
