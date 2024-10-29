@@ -49,15 +49,14 @@
  * Inicio del programa
  */
   if(($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST['tirar'])){
-    var_dump(file("jugadores.txt"));  
-    /*$numdados = compNumDados();
+      $numdados = compNumDados();
       $jugadores = compJugadores();
       $puntuacionesJugadores = sumaDadosJugadores($numdados,$jugadores);
       imprimirTabla($jugadores);
       imprimirPuntuacionesJugadores($puntuacionesJugadores);
       $ganadores = saberGanador($puntuacionesJugadores);
       imprimirGanador($ganadores);
-      imprimirNumeroGanadores($ganadores);*/
+      imprimirNumeroGanadores($ganadores);
   }
   else if((($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST['registrar'])))
   {
