@@ -27,7 +27,7 @@
 
  
 <B>Nombre : </B><input type='text' name='nombre' value='' size=25><br><br> 
-<B>Apellidos : </B><input type='text' name='apellidos' value='' size=25><br><br> 
+<B>Apellidos : </B><input type='text' name='apellido' value='' size=25><br><br> 
 <B>Email : </B><input type='text' name='email' value='' size=25><br><br> 
  
 <B>Numero Dados: <input type='text' name='numdados' value='' size=5><br><br>
