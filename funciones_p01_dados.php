@@ -7,7 +7,7 @@
         $jugadoresFichero = file("jugadores.txt");
         $cont = 0;
         while ($cont < count($jugadoresFichero)) {
-            $nom = explode($jugadoresFichero[$cont],'#');
+            $nom = explode('#',$jugadoresFichero[$cont]);
             $jugadores[$nom[0]] = array();
             $cont++;
         }
