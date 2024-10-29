@@ -153,7 +153,7 @@
         $nombre = limpiarDatos($_REQUEST['nombre']);
         $apellido= limpiarDatos($_REQUEST['apellido']);
         $email= limpiarDatos($_REQUEST['email']);
-        return $nombre . "#" . $apellido . "#" . $email;
+        return $nombre . "#" . $apellido . "#" . $email . "\n";
     }
 
     function limpiarDatos($data){

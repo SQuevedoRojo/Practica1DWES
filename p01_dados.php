@@ -49,7 +49,7 @@
  * Inicio del programa
  */
   if(($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST['tirar'])){
-    var_dump(file("jugador.txt"));  
+    var_dump(file("jugadores.txt"));  
     /*$numdados = compNumDados();
       $jugadores = compJugadores();
       $puntuacionesJugadores = sumaDadosJugadores($numdados,$jugadores);
