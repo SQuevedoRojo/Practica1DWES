@@ -10,8 +10,8 @@
 
 </HEAD>
   <?php 
-    include 'funciones_p01_dados.php';
-    include 'funcion_error.php';
+    include_once 'funciones_p01_dados.php';
+    include_once 'funcion_error.php';
   ?>
 <BODY>
 
