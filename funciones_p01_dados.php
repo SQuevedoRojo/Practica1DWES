@@ -1,6 +1,6 @@
 <?php
 /*
-    Funcion que crea los jugadores a partir de un txt de la pagina de registro de los jugadores,
+    Funcion que crea los jugadores a partir de un txt de la pagina de registro.php de los jugadores,
     si hay menos de un jugador se termina el programa por una excepcion
     */
     function compJugadores(){
@@ -149,7 +149,7 @@
     }
 
     /*
-    Funcion que recoge los datos de los jugadores desde la pagina de registro y crea la linea de insercion para el fichero
+    Funcion que recoge los datos de los jugadores desde la pagina de registro.php y crea la linea de insercion para el fichero
     */
     function recogerjugador()
     {
